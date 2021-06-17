@@ -59,7 +59,17 @@ let vowelBonusScore= function(word){
   return score
 }
 
-let scrabbleScore;
+let scrabbleScore= function(word){
+  word= word.toUpperCase()
+ let letterPoints = 0;
+ 
+	for (let i = 0; i < word.length; i++) {
+ 
+			letterPoints += newPointStructure[word[i]];
+		  }
+ 	return letterPoints;
+ }
+
 
 const scoringAlgorithms = [
    {
@@ -75,7 +85,7 @@ const scoringAlgorithms = [
   {
   name: 'Scrabble',
   description: 'The traditional scoring algorithm.',
-  scorerFunction: oldScrabbleScorer  
+  scorerFunction: scrabbleScore  
   }
 ];
 
@@ -89,7 +99,7 @@ function scorerPrompt() {
   }else if ( userAlgorithm==1){
     console.log (`Score for '${userInput}':${vowelBonusScore(userInput)}`)
   }else if  (userAlgorithm==2){
-    console.log (`Score for '${userInput}':\n${oldScrabbleScorer(userInput)}`)
+    console.log (`Score for '${userInput}':\n${scrabbleScore(userInput)}`)
   }
 }
 
