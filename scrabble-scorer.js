@@ -75,17 +75,17 @@ const scoringAlgorithms = [
    {
   name: 'Simple Score',
   description: 'Each letter is worth 1 point.',
-  scorerFunction: simpleScore
+  scoringFunction: simpleScore
   },
   {
   name: 'Bonus Vowels',
   description: "Vowels are 3 pts, consonants are 1 pt.",
-  scorerFunction: vowelBonusScore
+  scoringFunction: vowelBonusScore
   },
   {
   name: 'Scrabble',
   description: 'The traditional scoring algorithm.',
-  scorerFunction: scrabbleScore  
+  scoringFunction: scrabbleScore  
   }
 ];
 
@@ -99,7 +99,7 @@ function scorerPrompt() {
   }else if ( userAlgorithm==1){
     console.log (`Score for '${userInput}':${vowelBonusScore(userInput)}`)
   }else if  (userAlgorithm==2){
-    console.log (`Score for '${userInput}':\n${scrabbleScore(userInput)}`)
+    console.log (`Score for '${userInput}':${scrabbleScore(userInput)}`)
   }
 }
 
