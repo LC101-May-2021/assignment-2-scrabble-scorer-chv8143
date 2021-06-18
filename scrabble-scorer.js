@@ -59,7 +59,7 @@ let vowelBonusScore= function(word){
 }
 
 let scrabbleScore= function(word){
-  word= word.toUpperCase()
+  // word= word.toUpperCase()
  let letterPoints = 0;
  
 	for (let i = 0; i < word.length; i++) {
