@@ -1,5 +1,4 @@
 // inspired by https://exercism.io/tracks/javascript/exercises/etl/solutions/91f99a3cca9548cebe5975d7ebca6a85
-
 const input = require("readline-sync");
 
 const oldPointStructure = {
@@ -107,14 +106,16 @@ function transform(old) {
   let updatedPoints={}
   for (score in old){
     let points= old[score]
-    for(let i=0;i<points.length;i++)
-    updatedPoints[points[i]]=Number(score);
+      for(let i=0;i<points.length;i++){
+      let points1= points[i].toLowerCase()
+        updatedPoints[points1]=Number(score);
+  }
   }
 return updatedPoints
 };
 
 let newPointStructure=transform(oldPointStructure);
-
+console.log (newPointStructure);
 function runProgram() {
    scorerPrompt();
    
